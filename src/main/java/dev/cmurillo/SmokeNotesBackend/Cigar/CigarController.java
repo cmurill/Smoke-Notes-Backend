@@ -35,4 +35,10 @@ public class CigarController {
     void create(@RequestBody Cigar cigar) {
         cigarRepository.createCigar(cigar);
     }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PutMapping("{id}/")
+    void update(@PathVariable Integer id, @RequestBody Cigar cigar) {
+        cigarRepository.updateCigar(id, cigar);
+    }
 }

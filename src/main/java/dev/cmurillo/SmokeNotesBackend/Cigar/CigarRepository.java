@@ -41,4 +41,12 @@ public class CigarRepository {
         Assert.state(updated == 1, "Failed to create the cigar: " + cigar.cigarName());
     }
 
+    public void updateCigar(Integer id, Cigar updatedCigar) {
+        var updated = jdbcClient.sql("update cigar set cigar_id = ?,cigar_name = ?,factory_name = ?,wrapper_type = ?,wrapper_country = ?,binder_country = ?,filler_country = ? where cigar_id = ?")
+                .params(List.of(updatedCigar.cigarId(),updatedCigar.cigarName(),updatedCigar.factoryName(),updatedCigar.wrapperType().toString(),updatedCigar.wrapperCountry().toString(),updatedCigar.binderCountry().toString(),updatedCigar.fillerCountry().toString(),id))
+                .update();
+
+        //Assert.state(updated == 1, "Failed to update the cigar: " + updatedCigar.cigarName());
+    }
+
 }
