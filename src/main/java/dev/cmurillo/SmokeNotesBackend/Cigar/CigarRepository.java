@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,14 @@ public class CigarRepository {
                 .param(id)
                 .query(Cigar.class)
                 .optional();
+    }
+
+    public void createCigar(Cigar cigar) {
+        var updated = jdbcClient.sql("insert into cigar(cigar_id,cigar_name,factory_name,wrapper_type,wrapper_country,binder_country,filler_country) values(?,?,?,?,?,?,?)")
+                .params(List.of(cigar.cigarId(),cigar.cigarName(),cigar.factoryName(),cigar.wrapperType().toString(),cigar.wrapperCountry().toString(),cigar.binderCountry().toString(),cigar.fillerCountry().toString()))
+                .update();
+
+        Assert.state(updated == 1, "Failed to create the cigar: " + cigar.cigarName());
     }
 
 }
