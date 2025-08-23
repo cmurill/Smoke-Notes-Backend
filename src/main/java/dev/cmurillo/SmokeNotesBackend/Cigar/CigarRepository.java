@@ -49,4 +49,12 @@ public class CigarRepository {
         //Assert.state(updated == 1, "Failed to update the cigar: " + updatedCigar.cigarName());
     }
 
+    public  void deleteCigarById(Integer id) {
+        var updated = jdbcClient.sql("delete from cigar where cigar_id = ?")
+                .param(id)
+                .update();
+
+        Assert.state(updated == 1, "Failed to delete the cigar with id: " + id);
+    }
+
 }

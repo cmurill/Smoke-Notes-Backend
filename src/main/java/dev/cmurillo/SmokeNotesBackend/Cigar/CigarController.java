@@ -16,6 +16,7 @@ public class CigarController {
         this.cigarRepository = cigarRepository;
     }
 
+    //get
     @GetMapping("")
     List<Cigar> findAll() {
         return cigarRepository.findAll();
@@ -30,15 +31,24 @@ public class CigarController {
         return cigar.get();
     }
 
+    //post
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
     void create(@RequestBody Cigar cigar) {
         cigarRepository.createCigar(cigar);
     }
 
+    //put
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("{id}/")
     void update(@PathVariable Integer id, @RequestBody Cigar cigar) {
         cigarRepository.updateCigar(id, cigar);
+    }
+
+    //delete
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("{id}/")
+    void delete(@PathVariable Integer id) {
+        cigarRepository.deleteCigarById(id);
     }
 }
