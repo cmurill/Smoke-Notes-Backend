@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class CigarRepository {
@@ -24,5 +25,11 @@ public class CigarRepository {
                 .list();
     }
 
+    public Optional<Cigar> findByCigarId(Integer id) {
+        return jdbcClient.sql("select * from cigar where cigar_id = ?")
+                .param(id)
+                .query(Cigar.class)
+                .optional();
+    }
 
 }
