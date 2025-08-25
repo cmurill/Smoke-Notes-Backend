@@ -1,5 +1,6 @@
 package dev.cmurillo.SmokeNotesBackend;
 
+import dev.cmurillo.SmokeNotesBackend.Cigar.CigarRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -17,7 +18,7 @@ public class SmokeNotesBackendApplication {
 	}
 
 	@Bean
-	CommandLineRunner runner() {
+	CommandLineRunner runner(CigarRepository cigarRepository) {
 		return args -> {
 			log.info("Testing application command line runner!");
 		};

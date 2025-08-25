@@ -57,4 +57,24 @@ public class CigarRepository {
         Assert.state(updated == 1, "Failed to delete the cigar with id: " + id);
     }
 
+    public int count() {
+        return jdbcClient.sql("select * from cigar").query().listOfRows().size();
+    }
+
+    public void saveAll(List<Cigar> cigars) {
+        cigars.stream().forEach(this::createCigar);
+    }
+
+    /*
+    May not potentially include, but an idea for an endpoint
+
+    public List<Cigar> findByWrapperType(String wrapperType) {
+        return jdbcClient.sql("select * from cigar where wrapper_type = ?")
+                .param(wrapperType)
+                .query(Cigar.class)
+                .list();
+    }
+
+     */
+
 }

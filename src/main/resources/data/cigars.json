@@ -1,0 +1,40 @@
+{
+  "cigars": [
+    {
+      "cigarId": 1,
+      "cigarName": "The Tabernacle",
+      "factoryName": "The Foundation Cigar Company",
+      "wrapperType": "MADURO",
+      "wrapperCountry": "NICARAGUA",
+      "binderCountry": "MEXICO",
+      "fillerCountry": "HONDURAS"
+    },
+    {
+      "cigarId": 2,
+      "cigarName": "Liga Privada No. 9",
+      "factoryName": "Drew Estate",
+      "wrapperType": "MADURO",
+      "wrapperCountry": "NICARAGUA",
+      "binderCountry": "BRAZIL",
+      "fillerCountry": "NICARAGUA"
+    },
+    {
+      "cigarId": 3,
+      "cigarName": "Vintage Corojo 2002",
+      "factoryName": "Gran Habano",
+      "wrapperType": "COROJO",
+      "wrapperCountry": "HONDURAS",
+      "binderCountry": "NICARAGUA",
+      "fillerCountry": "DOMINICAN_REPUBLIC"
+    },
+    {
+      "cigarId": 4,
+      "cigarName": "Macanudo Cafe",
+      "factoryName": "Macanudo Cigars",
+      "wrapperType": "CONNECTICUT",
+      "wrapperCountry": "DOMINICAN_REPUBLIC",
+      "binderCountry": "MEXICO",
+      "fillerCountry": "DOMINICAN_REPUBLIC"
+    }
+  ]
+}
