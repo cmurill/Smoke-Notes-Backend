@@ -22,6 +22,10 @@ public class CigarJsonDataLoader implements CommandLineRunner {
         this.objectMapper = new ObjectMapper();
     }
 
+    /* Using the command line runner for a programmatic way to check if our "in-memory" h2 database has data in it
+     * If no data is present, read the data in from the JSON file
+     * If data is present, output that data exists
+     */
     @Override
     public void run(String... args) throws Exception {
         if (cigarRepository.count() == 0) {

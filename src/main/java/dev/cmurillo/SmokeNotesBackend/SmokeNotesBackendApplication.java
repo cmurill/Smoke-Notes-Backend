@@ -17,10 +17,10 @@ public class SmokeNotesBackendApplication {
 		SpringApplication.run(SmokeNotesBackendApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner runner(CigarRepository cigarRepository) {
-		return args -> {
-			log.info("Testing application command line runner!");
-		};
-	}
+//	@Bean
+//	CommandLineRunner runner(CigarRepository cigarRepository) {
+//		return args -> {
+//			log.info("Testing application command line runner!");
+//		};
+//	}
 }
