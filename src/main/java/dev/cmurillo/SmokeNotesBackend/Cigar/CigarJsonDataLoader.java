@@ -14,10 +14,10 @@ import java.io.InputStream;
 public class CigarJsonDataLoader implements CommandLineRunner {
 
     private static final Logger log = LoggerFactory.getLogger(CigarJsonDataLoader.class);
-    private final CigarRepository cigarRepository;
+    private final JdbcClientCigarRepository cigarRepository;
     private final ObjectMapper objectMapper;
 
-    public CigarJsonDataLoader(CigarRepository cigarRepository, ObjectMapper objectMapper) {
+    public CigarJsonDataLoader(JdbcClientCigarRepository cigarRepository, ObjectMapper objectMapper) {
         this.cigarRepository = cigarRepository;
         this.objectMapper = new ObjectMapper();
     }
