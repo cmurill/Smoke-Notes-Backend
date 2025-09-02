@@ -1,5 +1,6 @@
 package dev.cmurillo.SmokeNotesBackend.Cigar;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public record Cigar(
