@@ -23,7 +23,7 @@ public class CigarController {
     }
 
     @GetMapping("{id}/")
-    Cigar findById(@PathVariable Integer id) {
+    Cigar findById(@PathVariable String id) {
         Optional<Cigar> cigar = cigarRepository.findByCigarId(id);
         if (cigar.isEmpty()) {
             throw new CigarNotFoundException("Cigar with id: " + id + " , could not be found");
@@ -41,14 +41,14 @@ public class CigarController {
     //put
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("{id}/")
-    void update(@PathVariable Integer id, @RequestBody Cigar cigar) {
+    void update(@PathVariable String id, @RequestBody Cigar cigar) {
         cigarRepository.updateCigar(id, cigar);
     }
 
     //delete
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("{id}/")
-    void delete(@PathVariable Integer id) {
+    void delete(@PathVariable String id) {
         cigarRepository.deleteCigarById(id);
     }
 }

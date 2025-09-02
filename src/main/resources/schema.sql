@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS Cigar (
-    cigar_id INT NOT NULL,
+    cigar_id VARCHAR(36) NOT NULL,
     cigar_name VARCHAR(250) NOT NULL,
     factory_name VARCHAR(250) NOT NULL,
     wrapper_type VARCHAR(250) NOT NULL,

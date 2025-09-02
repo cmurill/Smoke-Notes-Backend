@@ -1,7 +1,9 @@
 package dev.cmurillo.SmokeNotesBackend.Cigar;
 
+import java.util.UUID;
+
 public record Cigar(
-        Integer cigarId,
+        String cigarId,
         String cigarName,
         String factoryName,
         WrapperType wrapperType,
@@ -9,4 +11,10 @@ public record Cigar(
         OriginCountry binderCountry,
         OriginCountry fillerCountry
 ) {
+
+    public Cigar {
+        if (cigarId == null ||  cigarId.isBlank()) {
+            cigarId = UUID.randomUUID().toString();
+        }
+    }
 }

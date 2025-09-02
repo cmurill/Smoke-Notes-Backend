@@ -6,7 +6,6 @@ import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,7 +25,7 @@ public class CigarRepository {
                 .list();
     }
 
-    public Optional<Cigar> findByCigarId(Integer id) {
+    public Optional<Cigar> findByCigarId(String id) {
         return jdbcClient.sql("select * from cigar where cigar_id = ?")
                 .param(id)
                 .query(Cigar.class)
@@ -41,7 +40,7 @@ public class CigarRepository {
         Assert.state(updated == 1, "Failed to create the cigar: " + cigar.cigarName());
     }
 
-    public void updateCigar(Integer id, Cigar updatedCigar) {
+    public void updateCigar(String id, Cigar updatedCigar) {
         var updated = jdbcClient.sql("update cigar set cigar_id = ?,cigar_name = ?,factory_name = ?,wrapper_type = ?,wrapper_country = ?,binder_country = ?,filler_country = ? where cigar_id = ?")
                 .params(List.of(updatedCigar.cigarId(),updatedCigar.cigarName(),updatedCigar.factoryName(),updatedCigar.wrapperType().toString(),updatedCigar.wrapperCountry().toString(),updatedCigar.binderCountry().toString(),updatedCigar.fillerCountry().toString(),id))
                 .update();
@@ -49,7 +48,7 @@ public class CigarRepository {
         //Assert.state(updated == 1, "Failed to update the cigar: " + updatedCigar.cigarName());
     }
 
-    public  void deleteCigarById(Integer id) {
+    public  void deleteCigarById(String id) {
         var updated = jdbcClient.sql("delete from cigar where cigar_id = ?")
                 .param(id)
                 .update();
