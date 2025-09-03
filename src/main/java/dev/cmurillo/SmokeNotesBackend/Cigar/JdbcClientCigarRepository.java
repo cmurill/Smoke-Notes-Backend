@@ -64,16 +64,4 @@ public class JdbcClientCigarRepository {
         cigars.stream().forEach(this::createCigar);
     }
 
-    /*
-    May not potentially include, but an idea for an endpoint
-
-    public List<Cigar> findByWrapperType(String wrapperType) {
-        return jdbcClient.sql("select * from cigar where wrapper_type = ?")
-                .param(wrapperType)
-                .query(Cigar.class)
-                .list();
-    }
-
-     */
-
 }

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/cigars/")
+@RequestMapping("/api/cigars")
 public class CigarController {
 
     private final CigarRepository cigarRepository;
@@ -22,7 +22,7 @@ public class CigarController {
         return cigarRepository.findAll();
     }
 
-    @GetMapping("{id}/")
+    @GetMapping("/{id}")
     Cigar findById(@PathVariable String id) {
         Optional<Cigar> cigar = cigarRepository.findById(id);
         if (cigar.isEmpty()) {
@@ -40,15 +40,20 @@ public class CigarController {
 
     //put
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PutMapping("{id}/")
+    @PutMapping("/{id}")
     void update(@RequestBody Cigar cigar, @PathVariable String id) {
         cigarRepository.save(cigar);
     }
 
     //delete
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping("{id}/")
+    @DeleteMapping("/{id}")
     void delete(@PathVariable String id) {
         cigarRepository.delete(cigarRepository.findById(id).get());
+    }
+
+    @GetMapping("/wrapper/{wrapper}")
+    List<Cigar> findByWrapper(@PathVariable String wrapper) {
+        return cigarRepository.findAllByWrapperType(wrapper.toUpperCase());
     }
 }
