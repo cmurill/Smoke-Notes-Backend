@@ -22,7 +22,7 @@ public class CigarJsonDataLoader implements CommandLineRunner {
         this.objectMapper = new ObjectMapper();
     }
 
-    /* Using the command line runner for a programmatic way to check if our "in-memory" h2 database has data in it
+    /* Using the command line runner for a programmatic way to check if our database has data in it
      * If no data is present, read the data in from the JSON file
      * If data is present, output that data exists
      */
@@ -31,7 +31,7 @@ public class CigarJsonDataLoader implements CommandLineRunner {
         if (cigarRepository.count() == 0) {
             try (InputStream is = TypeReference.class.getResourceAsStream("/data/cigars.json")) {
                 Cigars allCigars = objectMapper.readValue(is, Cigars.class);
-                log.info("Reading {} cigars from JSON data and saving to in-memory collection.", allCigars.cigars().size());
+                log.info("Reading {} cigars from JSON data and saving to postgres container.", allCigars.cigars().size());
                 cigarRepository.saveAll(allCigars.cigars());
             } catch (IOException e) {
                 throw new RuntimeException("Failed to read JSON data", e);

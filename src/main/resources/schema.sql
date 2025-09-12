@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS Cigar (
     wrapper_country VARCHAR(250) NOT NULL,
     binder_country VARCHAR(250) NOT NULL,
     filler_country VARCHAR(250) NOT NULL,
+    user_rating INT,
     version INT,
     PRIMARY KEY (cigar_id)
     );

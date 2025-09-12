@@ -33,16 +33,16 @@ public class JdbcClientCigarRepository {
     }
 
     public void createCigar(Cigar cigar) {
-        var updated = jdbcClient.sql("insert into cigar(cigar_id,cigar_name,factory_name,wrapper_type,wrapper_country,binder_country,filler_country) values(?,?,?,?,?,?,?)")
-                .params(List.of(cigar.cigarId(),cigar.cigarName(),cigar.factoryName(),cigar.wrapperType().toString(),cigar.wrapperCountry().toString(),cigar.binderCountry().toString(),cigar.fillerCountry().toString()))
+        var updated = jdbcClient.sql("insert into cigar(cigar_id,cigar_name,factory_name,wrapper_type,wrapper_country,binder_country,filler_country,user_rating) values(?,?,?,?,?,?,?,?)")
+                .params(List.of(cigar.cigarId(),cigar.cigarName(),cigar.factoryName(),cigar.wrapperType().toString(),cigar.wrapperCountry().toString(),cigar.binderCountry().toString(),cigar.fillerCountry().toString(),cigar.userRating()))
                 .update();
 
         Assert.state(updated == 1, "Failed to create the cigar: " + cigar.cigarName());
     }
 
     public void updateCigar(String id, Cigar updatedCigar) {
-        var updated = jdbcClient.sql("update cigar set cigar_id = ?,cigar_name = ?,factory_name = ?,wrapper_type = ?,wrapper_country = ?,binder_country = ?,filler_country = ? where cigar_id = ?")
-                .params(List.of(updatedCigar.cigarId(),updatedCigar.cigarName(),updatedCigar.factoryName(),updatedCigar.wrapperType().toString(),updatedCigar.wrapperCountry().toString(),updatedCigar.binderCountry().toString(),updatedCigar.fillerCountry().toString(),id))
+        var updated = jdbcClient.sql("update cigar set cigar_id = ?,cigar_name = ?,factory_name = ?,wrapper_type = ?,wrapper_country = ?,binder_country = ?,filler_country = ?, user_rating = ? where cigar_id = ?")
+                .params(List.of(updatedCigar.cigarId(),updatedCigar.cigarName(),updatedCigar.factoryName(),updatedCigar.wrapperType().toString(),updatedCigar.wrapperCountry().toString(),updatedCigar.binderCountry().toString(),updatedCigar.fillerCountry().toString(), updatedCigar.userRating(),id))
                 .update();
 
         //Assert.state(updated == 1, "Failed to update the cigar: " + updatedCigar.cigarName());

@@ -15,6 +15,7 @@ public record Cigar(
         OriginCountry wrapperCountry,
         OriginCountry binderCountry,
         OriginCountry fillerCountry,
+        Integer userRating,
         @Version
         Integer version
 ) {
