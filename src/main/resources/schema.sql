@@ -10,3 +10,12 @@ CREATE TABLE IF NOT EXISTS Cigar (
     version INT,
     PRIMARY KEY (cigar_id)
     );
+
+CREATE TABLE IF NOT EXISTS users (
+    user_id VARCHAR(36) NOT NULL,
+    user_email VARCHAR(250) NOT NULL,
+    username VARCHAR(250) NOT NULL,
+    password VARCHAR(250) NOT NULL,
+    version INT,
+    PRIMARY KEY (user_id)
+);
