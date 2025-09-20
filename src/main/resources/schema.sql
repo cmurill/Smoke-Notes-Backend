@@ -13,6 +13,8 @@ CREATE TABLE IF NOT EXISTS Cigar (
 
 CREATE TABLE IF NOT EXISTS users (
     user_id VARCHAR(36) NOT NULL,
+    first_name VARCHAR(250) NOT NULL,
+    last_name VARCHAR(250) NOT NULL,
     user_email VARCHAR(250) NOT NULL,
     username VARCHAR(250) NOT NULL,
     password VARCHAR(250) NOT NULL,

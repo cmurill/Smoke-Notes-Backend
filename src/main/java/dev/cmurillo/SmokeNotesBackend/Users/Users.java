@@ -10,6 +10,8 @@ import org.springframework.data.relational.core.mapping.Table;
 public record Users(
     @Id
     String userId,
+    String firstName,
+    String lastName,
     String userEmail,
     String username,
     String password,

@@ -52,7 +52,7 @@ public class UsersController {
     void update(@RequestBody Users newUsers, @PathVariable String id) {
         Users existingUsers = findById(id);
 
-        Users updatedUsers = new Users(existingUsers.userId(), newUsers.userEmail(), newUsers.username(), newUsers.password(), existingUsers.version());
+        Users updatedUsers = new Users(existingUsers.userId(), newUsers.firstName(), newUsers.lastName(), newUsers.userEmail(), newUsers.username(), newUsers.password(), existingUsers.version());
         usersRepository.save(updatedUsers);
     }
 
