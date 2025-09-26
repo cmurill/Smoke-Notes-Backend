@@ -8,5 +8,5 @@ public interface UsersRepository extends ListCrudRepository<Users, String> {
 
     Optional<Users> findByUserEmailAndUsername(String userEmail, String username);
     Optional<Users> findByUserEmail(String userEmail);
-    Optional<Users> findUserByUsername(String username);
+    Optional<Users> findByUsername(String username);
 }
