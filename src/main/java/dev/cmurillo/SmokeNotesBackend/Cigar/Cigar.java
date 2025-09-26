@@ -9,12 +9,16 @@ import java.util.UUID;
 public record Cigar(
         @Id
         String cigarId,
+        // should not be null
         String cigarName,
+        // should not be null
         String factoryName,
+        // should not be null
         WrapperType wrapperType,
         OriginCountry wrapperCountry,
         OriginCountry binderCountry,
         OriginCountry fillerCountry,
+        // should be between 1-10 or null if not rated
         Integer userRating,
         @Version
         Integer version
