@@ -6,8 +6,7 @@
       "wrapperType": "MADURO",
       "wrapperCountry": "NICARAGUA",
       "binderCountry": "MEXICO",
-      "fillerCountry": "HONDURAS",
-      "userRating": 8
+      "fillerCountry": "HONDURAS"
     },
     {
       "cigarName": "Liga Privada No. 9",
@@ -15,8 +14,7 @@
       "wrapperType": "MADURO",
       "wrapperCountry": "NICARAGUA",
       "binderCountry": "BRAZIL",
-      "fillerCountry": "NICARAGUA",
-      "userRating": 10
+      "fillerCountry": "NICARAGUA"
     },
     {
       "cigarName": "Vintage Corojo 2002",
@@ -24,8 +22,7 @@
       "wrapperType": "COROJO",
       "wrapperCountry": "HONDURAS",
       "binderCountry": "NICARAGUA",
-      "fillerCountry": "DOMINICAN_REPUBLIC",
-      "userRating": 6
+      "fillerCountry": "DOMINICAN_REPUBLIC"
     },
     {
       "cigarName": "Macanudo Cafe",
@@ -33,8 +30,15 @@
       "wrapperType": "CONNECTICUT",
       "wrapperCountry": "DOMINICAN_REPUBLIC",
       "binderCountry": "MEXICO",
-      "fillerCountry": "DOMINICAN_REPUBLIC",
-      "userRating": 7
+      "fillerCountry": "DOMINICAN_REPUBLIC"
+    },
+    {
+      "cigarName": "La Aroma de Cuba",
+      "factoryName": "My Father Cigars",
+      "wrapperType": "CONNECTICUT_BROADLEAF",
+      "wrapperCountry": "NICARAGUA",
+      "binderCountry": "NICARAGUA",
+      "fillerCountry": "NICARAGUA"
     }
   ]
 }
