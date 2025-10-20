@@ -1,6 +1,5 @@
 package dev.cmurillo.SmokeNotesBackend.Service;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.cmurillo.SmokeNotesBackend.Model.Cigars.Cigars;
 import dev.cmurillo.SmokeNotesBackend.Repository.CigarRepository;

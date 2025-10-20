@@ -27,20 +27,26 @@ The API allows users to keep a digital journal of their cigar smoking experience
 1. Download Docker Desktop
     * Docker Desktop will need to be open in order for the Docker Compose file to spin up the container with the PostgreSQL
 2. Clone the repo from GitHub
-3. (Optional) Change the database credentials &#8212; this is a local API so the credentials can be whatever you'd like
-    * Open the project in your IDE of choice and navigate to the `compose.yml` file
-    * Modify the `POSTGRES_USER` & `POSTGRES_PASSWORD` to whatever you'd like
+3. Create a `.env` file. The .env file is ignored by git, therefore you will need to create your own and fill it out accordingly. There should be 3 fields that you need to fill in for your project. Make sure not to use any spaces or quotes.
+   1. `DB_NAME=name`: this will represent the name of the database
+   2. `DB_USER=username`: the username for the database that you are creating
+   3. `DB_PASS=password`: the password for your database
 4. Open your terminal and `cd` to the project directory
 5. Run the command `./mvnw spring-boot:run`
     * Note: The project will run on localhost port 8080 and the database will run on port 5432, so make sure these ports are clear
 
 ## API Endpoints
-| Endpoint | HTTP Request |URI| Description                                      |
-|:--------:|:------------:|:--|:-------------------------------------------------|
-| findAll  | GET      | /api/cigars  | Returns all cigar objects stored in the database |
-|findById|GET|/api/cigars/{id}|Returns the cigar object with the given ID|
-|create|POST|/api/cigars|Creates a cigar object from the request body and saves it to the database|
-|update|PUT|/api/cigars/{id}|Updates the cigar object with the given ID to contains the values in the request body|
-|delete|DELETE|/api/cigars/{id}|Deletes the cigar object with the given ID|
-|findByWrapper|GET|/api/cigars/wrapper/{wrapper}|Returns a list of all the cigars with the given wrapper type|
-|findByRating|GET|/api/cigars/ratings/{rating}|Returns a list of all the cigars with the given rating|
+|   Endpoint    | HTTP Request | URI                           | Description                                                                           |
+|:-------------:|:------------:|:------------------------------|:--------------------------------------------------------------------------------------|
+|    findAll    |     GET      | /api/cigars                   | Returns all cigar objects stored in the database                                      |
+|   findById    |     GET      | /api/cigars/{id}              | Returns the cigar object with the given ID                                            |
+|    create     |     POST     | /api/cigars                   | Creates a cigar object from the request body and saves it to the database             |
+|    update     |     PUT      | /api/cigars/{id}              | Updates the cigar object with the given ID to contains the values in the request body |
+|    delete     |    DELETE    | /api/cigars/{id}              | Deletes the cigar object with the given ID                                            |
+| findByWrapper |     GET      | /api/cigars/wrapper/{wrapper} | Returns a list of all the cigars with the given wrapper type                          |
+| findByRating  |     GET      | /api/cigars/ratings/{rating}  | Returns a list of all the cigars with the given rating                                |
+|    findAll    |     GET      | /api/users                    | Returns all user objects stored in the database                                       |
+|   findById    |     GET      | /api/users/{id}               | Returns the user object with the given ID                                             |
+|    create     |     POST     | /api/users                    | Creates a user object from the request body and saves it to the database              |
+|    update     |     PUT      | /api/users/{id}               | Updates the user object with the given ID to contain the values in the request body   |
+|    delete     |    DELETE    | /api/users/{id}               | Deletes the user object with the given ID                                             |
