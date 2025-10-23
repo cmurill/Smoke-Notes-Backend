@@ -1,7 +1,10 @@
 package dev.cmurillo.SmokeNotesBackend.Model.Cigars;
 
+import dev.cmurillo.SmokeNotesBackend.Model.UserCigars.UserCigar;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -25,6 +28,9 @@ public class Cigar {
 
     @Enumerated(EnumType.STRING)
     private OriginCountry fillerCountry;
+
+    @OneToMany(mappedBy = "cigar")
+    private List<UserCigar> userCigars = new ArrayList<>();
 
     @Version
     private Integer version;

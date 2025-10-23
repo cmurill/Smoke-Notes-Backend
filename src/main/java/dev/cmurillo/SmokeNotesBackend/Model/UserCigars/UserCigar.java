@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 public class UserCigar {
 
     @EmbeddedId
-    private UserCigarId ucigarId;
+    private UserCigarId ucid;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("userId")
@@ -22,14 +22,15 @@ public class UserCigar {
     @JoinColumn(name = "cigar_id", nullable = false)
     private Cigar cigar;
 
-    private LocalDateTime dateAdded = LocalDateTime.now();
+    private LocalDateTime dateAdded;
 
     protected UserCigar() {}
 
     public UserCigar(User user, Cigar cigar) {
         this.user = user;
         this.cigar = cigar;
-        this.ucigarId = new UserCigarId(user.getUserId(), cigar.getCigarId());
+        this.ucid = new UserCigarId(user.getUserId(), cigar.getCigarId());
+        this.dateAdded = LocalDateTime.now();
     }
 
     public LocalDateTime getDateAdded() {

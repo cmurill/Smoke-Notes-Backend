@@ -1,7 +1,10 @@
 package dev.cmurillo.SmokeNotesBackend.Model.Users;
 
+import dev.cmurillo.SmokeNotesBackend.Model.UserCigars.UserCigar;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -25,6 +28,9 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @OneToMany(mappedBy = "user")
+    private List<UserCigar> userCigars = new ArrayList<>();
 
     protected User() {}
 

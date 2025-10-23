@@ -30,4 +30,9 @@ public class UserCigarId implements Serializable {
         return Objects.equals(userId, other.userId) && Objects.equals(cigarId, other.cigarId);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, cigarId);
+    }
+
 }
