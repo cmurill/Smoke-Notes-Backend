@@ -1,13 +1,16 @@
 package dev.cmurillo.SmokeNotesBackend.Service;
 
+import dev.cmurillo.SmokeNotesBackend.Exceptions.UserCigarNotFoundException;
 import dev.cmurillo.SmokeNotesBackend.Model.Cigars.Cigar;
 import dev.cmurillo.SmokeNotesBackend.Model.UserCigars.UserCigar;
 import dev.cmurillo.SmokeNotesBackend.Model.UserCigars.UserCigarDTO;
+import dev.cmurillo.SmokeNotesBackend.Model.UserCigars.UserCigarId;
 import dev.cmurillo.SmokeNotesBackend.Model.Users.User;
 import dev.cmurillo.SmokeNotesBackend.Repository.UserCigarRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserCigarService {
@@ -36,5 +39,20 @@ public class UserCigarService {
         Cigar cigar = cigarService.getCigarById(cigarId);
         UserCigar userCigar = new UserCigar(user, cigar);
         userCigarRepository.save(userCigar);
+    }
+
+    public void removeUserCigar(String userId, String cigarId) {
+        UserCigarId ucid = new UserCigarId(userId, cigarId);
+        UserCigar uc = checkUserCigarById(ucid);
+        userCigarRepository.delete(uc);
+    }
+
+    private UserCigar checkUserCigarById(UserCigarId id) {
+        Optional<UserCigar> uc =  userCigarRepository.findById(id);
+        if (uc.isEmpty()) {
+            throw new UserCigarNotFoundException("A user with id " + id.getUserId() + ", does not contain a cigar with id " + id.getCigarId());
+        } else {
+            return uc.get();
+        }
     }
 }
