@@ -32,18 +32,4 @@ public class AuthenticationResponse {
                 "token='" + token + '\'' +
                 '}';
     }
-
-    public static class Builder {
-
-        private String token;
-
-        public Builder token(String token) {
-            this.token = token;
-            return this;
-        }
-    }
-
-    public AuthenticationResponse build() {
-        return new AuthenticationResponse(token);
-    }
 }
