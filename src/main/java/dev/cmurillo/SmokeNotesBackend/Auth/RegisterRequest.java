@@ -1,4 +1,4 @@
-package dev.cmurillo.SmokeNotesBackend.auth;
+package dev.cmurillo.SmokeNotesBackend.Auth;
 
 public record RegisterRequest(
         String firstName,

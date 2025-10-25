@@ -1,4 +1,4 @@
-package dev.cmurillo.SmokeNotesBackend.config;
+package dev.cmurillo.SmokeNotesBackend.Config;
 
 import dev.cmurillo.SmokeNotesBackend.Service.JwtService;
 import jakarta.servlet.FilterChain;

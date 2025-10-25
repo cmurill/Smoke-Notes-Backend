@@ -1,4 +1,4 @@
-package dev.cmurillo.SmokeNotesBackend.config;
+package dev.cmurillo.SmokeNotesBackend.Config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
