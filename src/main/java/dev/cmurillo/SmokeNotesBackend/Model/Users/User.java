@@ -1,5 +1,6 @@
 package dev.cmurillo.SmokeNotesBackend.Model.Users;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.cmurillo.SmokeNotesBackend.Model.UserCigars.UserCigar;
 import jakarta.persistence.*;
 
@@ -30,6 +31,7 @@ public class User {
     private Role role;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<UserCigar> userCigars = new ArrayList<>();
 
     protected User() {}

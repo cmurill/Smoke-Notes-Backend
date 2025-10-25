@@ -1,5 +1,6 @@
 package dev.cmurillo.SmokeNotesBackend.Model.Cigars;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.cmurillo.SmokeNotesBackend.Model.UserCigars.UserCigar;
 import jakarta.persistence.*;
 
@@ -30,6 +31,7 @@ public class Cigar {
     private OriginCountry fillerCountry;
 
     @OneToMany(mappedBy = "cigar")
+    @JsonIgnore
     private List<UserCigar> userCigars = new ArrayList<>();
 
     @Version
