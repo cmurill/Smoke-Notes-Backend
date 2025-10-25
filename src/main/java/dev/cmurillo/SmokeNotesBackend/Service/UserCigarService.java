@@ -2,6 +2,7 @@ package dev.cmurillo.SmokeNotesBackend.Service;
 
 import dev.cmurillo.SmokeNotesBackend.Model.Cigars.Cigar;
 import dev.cmurillo.SmokeNotesBackend.Model.UserCigars.UserCigar;
+import dev.cmurillo.SmokeNotesBackend.Model.UserCigars.UserCigarDTO;
 import dev.cmurillo.SmokeNotesBackend.Model.Users.User;
 import dev.cmurillo.SmokeNotesBackend.Repository.UserCigarRepository;
 import org.springframework.stereotype.Service;
@@ -21,9 +22,13 @@ public class UserCigarService {
         this.cigarService = cigarService;
     }
 
-    public List<UserCigar> getUserCatalog(String userId) {
-        User user = userService.getUserById(userId);
-        return userCigarRepository.findByUser(user);
+    public UserCigarDTO getUserCatalog(String userId) {
+        User currentUser = userService.getUserById(userId);
+        List<UserCigar> userCigars = userCigarRepository.findByUser(currentUser);
+        List<UserCigarDTO.UserCigarItem> cigarItems = userCigars.stream()
+                .map(uc -> new UserCigarDTO.UserCigarItem(uc.getCigar(), uc.getDateAdded()))
+                .toList();
+        return new UserCigarDTO(userId, cigarItems);
     }
 
     public void addUserCigar(String userId, String cigarId) {
@@ -32,5 +37,4 @@ public class UserCigarService {
         UserCigar userCigar = new UserCigar(user, cigar);
         userCigarRepository.save(userCigar);
     }
-
 }
