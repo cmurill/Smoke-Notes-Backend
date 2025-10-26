@@ -39,6 +39,158 @@
       "wrapperCountry": "NICARAGUA",
       "binderCountry": "NICARAGUA",
       "fillerCountry": "NICARAGUA"
+    },
+    {
+      "cigarName": "Cohiba Black",
+      "factoryName": "El Laguito Factory",
+      "wrapperType": "CONNECTICUT_BROADLEAF",
+      "wrapperCountry": "DOMINICAN_REPUBLIC",
+      "binderCountry": "DOMINICAN_REPUBLIC",
+      "fillerCountry": "DOMINICAN_REPUBLIC"
+    },
+    {
+      "cigarName": "Oliva Serie V",
+      "factoryName": "Oliva Cigar Co.",
+      "wrapperType": "HABANO",
+      "wrapperCountry": "ECUADOR",
+      "binderCountry": "NICARAGUA",
+      "fillerCountry": "NICARAGUA"
+    },
+    {
+      "cigarName": "Oliva Serie O",
+      "factoryName": "Oliva Cigar Co.",
+      "wrapperType": "HABANO",
+      "wrapperCountry": "ECUADOR",
+      "binderCountry": "NICARAGUA",
+      "fillerCountry": "NICARAGUA"
+    },
+    {
+      "cigarName": "Rocky Patel Broadleaf",
+      "factoryName": "Rocky Patel Factory",
+      "wrapperType": "CONNECTICUT_BROADLEAF",
+      "wrapperCountry": "HONDURAS",
+      "binderCountry": "NICARAGUA",
+      "fillerCountry": "HONDURAN"
+    },
+    {
+      "cigarName": "Rocky Patel Connecticut",
+      "factoryName": "Rocky Patel Factory",
+      "wrapperType": "CONNECTICUT",
+      "wrapperCountry": "ECUADOR",
+      "binderCountry": "HONDURAS",
+      "fillerCountry": "HONDURAS"
+    },
+    {
+      "cigarName": "Rocky Patel Decade Cigars",
+      "factoryName": "Rocky Patel Factory",
+      "wrapperType": "SUMATRA",
+      "wrapperCountry": "ECUADOR",
+      "binderCountry": "HONDURAS",
+      "fillerCountry": "HONDURAS"
+    },
+    {
+      "cigarName": "Ashton Magnum",
+      "factoryName": "Arturo Fuente Factory",
+      "wrapperType": "CONNECTICUT",
+      "wrapperCountry": "DOMINICAN_REPUBLIC",
+      "binderCountry": "DOMINICAN_REPUBLIC",
+      "fillerCountry": "DOMINICAN_REPUBLIC"
+    },
+    {
+      "cigarName": "Ashton Cabinet Selection",
+      "factoryName": "Arturo Fuente Factory",
+      "wrapperType": "CONNECTICUT",
+      "wrapperCountry": "DOMINICAN_REPUBLIC",
+      "binderCountry": "DOMINICAN_REPUBLIC",
+      "fillerCountry": "DOMINICAN_REPUBLIC"
+    },
+    {
+      "cigarName": "Ashton Aged Maduro",
+      "factoryName": "Arturo Fuente Factory",
+      "wrapperType": "CONNECTICUT_BROADLEAF",
+      "wrapperCountry": "DOMINICAN_REPUBLIC",
+      "binderCountry": "DOMINICAN_REPUBLIC",
+      "fillerCountry": "DOMINICAN_REPUBLIC"
+    },
+    {
+      "cigarName": "Ashton ESG",
+      "factoryName": "Arturo Fuente Factory",
+      "wrapperType": "SUN_GROWN",
+      "wrapperCountry": "DOMINICAN_REPUBLIC",
+      "binderCountry": "DOMINICAN_REPUBLIC",
+      "fillerCountry": "DOMINICAN_REPUBLIC"
+    },
+    {
+      "cigarName": "Ashton Symmetry",
+      "factoryName": "Arturo Fuente Factory",
+      "wrapperType": "ROSADO",
+      "wrapperCountry": "ECUADOR",
+      "binderCountry": "DOMINICAN_REPUBLIC",
+      "fillerCountry": "NICARAGUA"
+    },
+    {
+      "cigarName": "Aston VSG",
+      "factoryName": "Arturo Fuente Factory",
+      "wrapperType": "SUMATRA",
+      "wrapperCountry": "ECUADOR",
+      "binderCountry": "DOMINICAN_REPUBLIC",
+      "fillerCountry": "DOMINICAN_REPUBLIC"
+    },
+    {
+      "cigarName": "Diesel",
+      "factoryName": "AJ Fernandez Factory",
+      "wrapperType": "MADURO",
+      "wrapperCountry": "NICARAGUA",
+      "binderCountry": "NICARAGUA",
+      "fillerCountry": "NICARAGUA"
+    },
+    {
+      "cigarName": "Diesel Unlimited",
+      "factoryName": "AJ Fernandez Factory",
+      "wrapperType": "HABANO",
+      "wrapperCountry": "ECUADOR",
+      "binderCountry": "NICARAGUA",
+      "fillerCountry": "HONDURAS"
+    },
+    {
+      "cigarName": "Drew Estate Tobacco Fat Bottom Betty",
+      "factoryName": "Drew Estate",
+      "wrapperType": "MADURO",
+      "wrapperCountry": "BRAZIL",
+      "binderCountry": "NICARAGUA",
+      "fillerCountry": "NICARAGUA"
+    },
+    {
+      "cigarName": "Enclave",
+      "factoryName": "AJ Fernandez Factory",
+      "wrapperType": "ROSADO",
+      "wrapperCountry": "NICARAGUA",
+      "binderCountry": "CAMEROON",
+      "fillerCountry": "NICARAGUA"
+    },
+    {
+      "cigarName": "San Lotano Oval",
+      "factoryName": "AJ Fernandez Factory",
+      "wrapperType": "HABANO",
+      "wrapperCountry": "NICARAGUA",
+      "binderCountry": "HONDURAS",
+      "fillerCountry": "NICARAGUA"
+    },
+    {
+      "cigarName": "New World",
+      "factoryName": "AJ Fernandez Factory",
+      "wrapperType": "OSCURO",
+      "wrapperCountry": "NICARAGUA",
+      "binderCountry": "NICARAGUA",
+      "fillerCountry": "NICARAGUA"
+    },
+    {
+      "cigarName": "Tobacco Leather Rose",
+      "factoryName": "Drew Estate",
+      "wrapperType": "MADURO",
+      "wrapperCountry": "BRAZIL",
+      "binderCountry": "INDONESIA",
+      "fillerCountry": "NICARAGUA"
     }
   ]
 }

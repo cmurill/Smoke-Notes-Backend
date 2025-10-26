@@ -9,5 +9,7 @@ public enum WrapperType {
     SAN_ANDRES,
     CANDELA,
     SUMATRA,
-    CONNECTICUT_BROADLEAF
+    CONNECTICUT_BROADLEAF,
+    SUN_GROWN,
+    ROSADO
 }
