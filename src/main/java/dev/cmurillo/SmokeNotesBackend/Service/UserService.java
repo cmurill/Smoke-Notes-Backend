@@ -26,6 +26,8 @@ public class UserService {
         return checkUserById(id);
     }
 
+    /*
+    Register request should replace the create user functionality
     public void createUser(User user) {
         Optional<User> existingUser = userRepository.findByUsername(user.getUsername());
 
@@ -34,6 +36,7 @@ public class UserService {
         }
         userRepository.save(user);
     }
+     */
 
     public void updateUser(String id, User updatedUser) {
         User existingUser = checkUserById(id);

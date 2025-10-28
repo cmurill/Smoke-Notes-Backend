@@ -27,11 +27,14 @@ public class UserController {
         return userService.getUserById(id);
     }
 
+    /*
+    Register request should replace the create user functionality
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
     void create(@RequestBody User user) {
         userService.createUser(user);
     }
+     */
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")

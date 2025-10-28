@@ -1,9 +1,9 @@
 package dev.cmurillo.SmokeNotesBackend.Controller;
 
 import dev.cmurillo.SmokeNotesBackend.Service.AuthenticationService;
-import dev.cmurillo.SmokeNotesBackend.auth.AuthenticationRequest;
-import dev.cmurillo.SmokeNotesBackend.auth.AuthenticationResponse;
-import dev.cmurillo.SmokeNotesBackend.auth.RegisterRequest;
+import dev.cmurillo.SmokeNotesBackend.Auth.AuthenticationRequest;
+import dev.cmurillo.SmokeNotesBackend.Auth.AuthenticationResponse;
+import dev.cmurillo.SmokeNotesBackend.Auth.RegisterRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
