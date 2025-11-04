@@ -68,6 +68,11 @@ public class User implements UserDetails {
         return lastName;
     }
 
+    @JsonIgnore
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+
     @Override
     public String getUsername() {
         return username;
