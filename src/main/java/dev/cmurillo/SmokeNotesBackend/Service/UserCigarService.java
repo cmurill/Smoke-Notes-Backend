@@ -39,6 +39,7 @@ public class UserCigarService {
         return new UserCigarDTO(userId, cigarItems);
     }
 
+    // todo: need to add logic to make sure that the same cigar can't be added to again...
     public void addUserCigar(String userId, String cigarId) {
         User user = userService.getUserById(userId);
         Cigar cigar = cigarService.getCigarById(cigarId);

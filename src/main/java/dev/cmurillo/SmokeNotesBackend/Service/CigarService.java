@@ -33,7 +33,7 @@ public class CigarService {
         return checkCigarById(id);
     }
 
-    // Prior to creating a cigar, this method checks to see if there is a cigar that already exists with all of the same fields
+    // Prior to creating a cigar, this method checks to see if there is a cigar that already exists with all the same fields
     public void createCigar(Cigar cigar) {
         log.info(getClass() + ": Attempting to create a new cigar");
         log.info(getClass() + ": Checking for existing cigar with the same fields");

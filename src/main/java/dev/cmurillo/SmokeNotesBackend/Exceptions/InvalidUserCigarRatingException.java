@@ -3,9 +3,9 @@ package dev.cmurillo.SmokeNotesBackend.Exceptions;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.NOT_FOUND)
-public class CigarNotFoundException extends RuntimeException {
-    public CigarNotFoundException(String message) {
+@ResponseStatus(HttpStatus.BAD_REQUEST)
+public class InvalidUserCigarRatingException extends RuntimeException {
+    public InvalidUserCigarRatingException(String message) {
         super(message);
     }
 }
