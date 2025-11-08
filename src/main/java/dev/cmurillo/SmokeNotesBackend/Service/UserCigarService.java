@@ -45,6 +45,7 @@ public class UserCigarService {
         User user = userService.getUserById(userId);
         Cigar cigar = cigarService.getCigarById(cigarId);
         if (userCigarRepository.existsById(ucid)) {
+            log.warn(getClass() + ": Error the user already contains the cigar in their catalog.");
             throw new ExistingUserCigarException("User: " + user.getFirstName() +
                     " already has the cigar " + cigar.getCigarName() + " in their catalog."
             );
