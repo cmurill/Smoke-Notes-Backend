@@ -2,6 +2,7 @@ package dev.cmurillo.SmokeNotesBackend.Model.UserCigars;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import dev.cmurillo.SmokeNotesBackend.Exceptions.InvalidUserCigarRatingException;
 import dev.cmurillo.SmokeNotesBackend.Model.Cigars.Cigar;
 import dev.cmurillo.SmokeNotesBackend.Model.Users.User;
 import jakarta.persistence.*;
@@ -27,15 +28,20 @@ public class UserCigar {
     @JoinColumn(name = "cigar_id", nullable = false)
     private Cigar cigar;
 
+    private int userRating;
+
     @Column(nullable = false)
     private LocalDateTime dateAdded;
 
     protected UserCigar() {}
 
-    public UserCigar(User user, Cigar cigar) {
+    public UserCigar(User user, Cigar cigar, int userRating) {
         this.user = user;
         this.cigar = cigar;
         this.ucid = new UserCigarId(user.getUserId(), cigar.getCigarId());
+        if (!(userRating >= 1 && userRating <= 10)) {
+            throw new InvalidUserCigarRatingException("Invalid rating: value must be between 1 and 10");
+        }
         this.dateAdded = LocalDateTime.now();
     }
 
@@ -46,6 +52,10 @@ public class UserCigar {
 
     public Cigar getCigar() {
         return cigar;
+    }
+
+    public int getUserRating() {
+        return userRating;
     }
 
     public LocalDateTime getDateAdded() {
