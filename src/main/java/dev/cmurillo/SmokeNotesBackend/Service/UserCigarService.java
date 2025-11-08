@@ -1,5 +1,6 @@
 package dev.cmurillo.SmokeNotesBackend.Service;
 
+import dev.cmurillo.SmokeNotesBackend.Exceptions.ExistingUserCigarException;
 import dev.cmurillo.SmokeNotesBackend.Exceptions.UserCigarNotFoundException;
 import dev.cmurillo.SmokeNotesBackend.Model.Cigars.Cigar;
 import dev.cmurillo.SmokeNotesBackend.Model.UserCigars.UserCigar;
@@ -33,18 +34,23 @@ public class UserCigarService {
         log.info(getClass() + ": Retrieving user's cigar catalog with user id: " + userId);
         List<UserCigar> userCigars = userCigarRepository.findByUser(currentUser);
         List<UserCigarDTO.UserCigarItem> cigarItems = userCigars.stream()
-                .map(uc -> new UserCigarDTO.UserCigarItem(uc.getCigar(), uc.getDateAdded()))
+                .map(uc -> new UserCigarDTO.UserCigarItem(uc.getCigar(), uc.getUserRating(), uc.getDateAdded()))
                 .toList();
         log.info(getClass() + ": Successfully retrieved the user's cigar catalog with user id: " + userId);
         return new UserCigarDTO(userId, cigarItems);
     }
 
-    // todo: need to add logic to make sure that the same cigar can't be added to again...
-    public void addUserCigar(String userId, String cigarId) {
+    public void addUserCigar(String userId, String cigarId, int rating) {
+        UserCigarId ucid = new UserCigarId(userId, cigarId);
         User user = userService.getUserById(userId);
         Cigar cigar = cigarService.getCigarById(cigarId);
-        UserCigar userCigar = new UserCigar(user, cigar);
-        userCigarRepository.save(userCigar);
+        if (userCigarRepository.existsById(ucid)) {
+            throw new ExistingUserCigarException("User: " + user.getFirstName() +
+                    " already has the cigar " + cigar.getCigarName() + " in their catalog."
+            );
+        }
+        UserCigar currentUserCigar = new UserCigar(user, cigar, rating);
+        userCigarRepository.save(currentUserCigar);
         log.info(getClass() + ": Added the cigar " + cigar.getCigarName() + " to user " + user.getFullName() + "'s cigar catalog");
     }
 

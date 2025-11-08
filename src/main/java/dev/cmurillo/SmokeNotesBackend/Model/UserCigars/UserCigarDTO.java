@@ -6,5 +6,5 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public record UserCigarDTO(String userId, List<UserCigarItem> cigars) {
-    public record UserCigarItem(Cigar cigar, LocalDateTime dateAdded){}
+    public record UserCigarItem(Cigar cigar, int userRating, LocalDateTime dateAdded){}
 }

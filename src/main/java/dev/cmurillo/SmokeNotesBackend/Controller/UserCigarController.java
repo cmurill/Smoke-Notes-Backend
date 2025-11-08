@@ -1,5 +1,6 @@
 package dev.cmurillo.SmokeNotesBackend.Controller;
 
+import dev.cmurillo.SmokeNotesBackend.Model.UserCigars.AddUserCigarRequest;
 import dev.cmurillo.SmokeNotesBackend.Model.UserCigars.UserCigarDTO;
 import dev.cmurillo.SmokeNotesBackend.Service.UserCigarService;
 import org.springframework.http.HttpStatus;
@@ -22,8 +23,8 @@ public class UserCigarController {
 
     @ResponseStatus(HttpStatus.ACCEPTED)
     @PostMapping("/add/{cigarId}")
-    void addToCatalog(@PathVariable String userId, @PathVariable String cigarId) {
-        userCigarService.addUserCigar(userId, cigarId);
+    void addToCatalog(@PathVariable String userId, @PathVariable String cigarId, @RequestBody AddUserCigarRequest request) {
+        userCigarService.addUserCigar(userId, cigarId, request.userRating());
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
